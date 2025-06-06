@@ -1,23 +1,66 @@
+// Product Data Access Functions
+// Assumes productCatalog is globally available from products.js
+
+function getAllProducts() {
+    if (typeof productCatalog !== 'undefined') {
+        return productCatalog;
+    }
+    console.error('productCatalog is not defined. Make sure products.js is loaded correctly.');
+    return [];
+}
+
+function getProductById(id) {
+    const products = getAllProducts();
+    return products.find(product => product.id === id);
+}
+
+function getProductsByCategory(categoryName) {
+    const products = getAllProducts();
+    return products.filter(product => product.category === categoryName);
+}
+
+function getFeaturedProducts() {
+    const products = getAllProducts();
+    // Return the first 4 products as featured, or fewer if not enough products
+    return products.slice(0, 4);
+}
+
+function getRelatedProducts(category, currentProductId) {
+    const products = getAllProducts();
+    // Show up to 3 related products from the same category, excluding the current one
+    return products.filter(product => product.category === category && product.id !== currentProductId).slice(0, 3);
+}
+
+function getCategoryImage(categoryName) {
+    const categoryImageMap = {
+        'Electronics': 'category_electronics.svg',
+        'Clothing': 'category_clothing.svg',
+        'Home Goods': 'category_home_goods.svg',
+        'Beauty & Health': 'category_beauty_health.svg'
+    };
+    return categoryImageMap[categoryName] || 'default_category.svg'; // Provide a default or handle error
+}
+
+
 // DOM content loaded event
 document.addEventListener('DOMContentLoaded', function() {
-    // Load featured products on homepage
-    loadFeaturedProducts();
-    
-    // Load categories on homepage
-    loadCategories();
-    
     // Initialize shopping cart
     initCart();
     
     // Initialize search functionality
     initSearch();
+    
+    // Load page-specific functions
+    loadPageSpecificFunctions();
 });
 
 // Load featured products on homepage
 function loadFeaturedProducts() {
     const featuredProductsContainer = document.getElementById('featured-products');
     if (!featuredProductsContainer) return;
-    
+
+    // 重置已使用的图片集合
+    // resetUsedImages(); // Commented out as the function is no longer available
     const featuredProducts = getFeaturedProducts();
     
     featuredProductsContainer.innerHTML = '';
@@ -33,26 +76,23 @@ function createProductCard(product) {
     const productCard = document.createElement('div');
     productCard.className = 'product-card';
     
-    // 获取该产品类别的备用图片
-    const backupImg = getBackupImage(product.category);
-    
     // Create product card with error handling for images
     productCard.innerHTML = `
         <div class="product-image">
-            <a href="product.html?id=${product.id}">
-                <img src="${product.image}" alt="${product.name}" onerror="this.onerror=null; this.src='${backupImg}';"> 
+            <a href="/product?id=${product.id}">
+                <img src="${product.image}" alt="${product.name}">
             </a>
         </div>
         <div class="product-info">
             <h3>
-                <a href="product.html?id=${product.id}">
+                <a href="/product?id=${product.id}">
                     ${product.name}
                 </a>
             </h3>
             <div class="product-price">${product.price}</div>
             <div class="product-actions">
                 <button class="add-to-cart" data-id="${product.id}">Add to Cart</button>
-                <a href="product.html?id=${product.id}" class="view-details">View Details</a>
+                <a href="/product?id=${product.id}" class="view-details">View Details</a>
             </div>
         </div>
     `;
@@ -237,6 +277,8 @@ function loadProductPage() {
     
     if (!productId) return;
     
+    // resetUsedImages(); // Commented out
+    
     const product = getProductById(productId);
     
     if (!product) {
@@ -244,25 +286,23 @@ function loadProductPage() {
         return;
     }
     
-    // Get backup image for error handling
-    const backupImg = getBackupImage(product.category);
+    // const backupImg = getBackupImage(product.category); // Commented out
     
     // Update product details
-    document.getElementById('product-name').textContent = product.name;
+    let productImage = document.getElementById('product-image');
+    if (productImage) {
+        productImage.src = product.image;
+        productImage.alt = product.name;
+        // productImage.onerror = function() { /* Error handling removed */ };
+    }
+    document.getElementById('product-title').textContent = product.name;
     document.getElementById('product-price').textContent = product.price;
     document.getElementById('product-description').textContent = product.description;
-    
-    // Set product image with error handling
-    const productImage = document.getElementById('product-image');
-    productImage.src = product.image;
-    productImage.alt = product.name;
-    productImage.onerror = function() {
-        this.onerror = null;
-        this.src = backupImg;
-    };
+    document.getElementById('product-category').textContent = product.category;
+    document.getElementById('product-sku').textContent = product.id;
     
     // Add features list
-    const featuresList = document.getElementById('product-features');
+    let featuresList = document.getElementById('product-features');
     featuresList.innerHTML = '';
     
     product.features.forEach(feature => {
@@ -296,6 +336,8 @@ function loadRelatedProducts(category, currentProductId) {
         relatedProductsContainer.style.display = 'none';
         return;
     }
+    
+    // resetUsedImages(); // Commented out
     
     relatedProducts.forEach(product => {
         const productCard = createProductCard(product);
@@ -333,12 +375,11 @@ function loadCartPage() {
         const cartItem = document.createElement('div');
         cartItem.className = 'cart-item';
         
-        // Get backup image for error handling
-        const backupImg = getBackupImage(item.category);
+        // const backupImg = getBackupImage(item.category); // Commented out
         
         cartItem.innerHTML = `
             <div class="cart-item-image">
-                <img src="${item.image}" alt="${item.name}" onerror="this.onerror=null; this.src='${backupImg}';">
+                <img src="${item.image}" alt="${item.name}">
             </div>
             <div class="cart-item-name">${item.name}</div>
             <div class="cart-item-price">${item.price}</div>
@@ -471,7 +512,9 @@ function loadSearchPage() {
         return;
     }
     
-    // Display results
+    // 重置已使用的图片集合
+    resetUsedImages();
+    
     results.forEach(product => {
         const productCard = createProductCard(product);
         searchResultsContainer.appendChild(productCard);
@@ -487,6 +530,9 @@ function loadAllProductsPage() {
     
     productsContainer.innerHTML = '';
     
+    // 重置已使用的图片集合
+    resetUsedImages();
+    
     allProducts.forEach(product => {
         const productCard = createProductCard(product);
         productsContainer.appendChild(productCard);
@@ -500,53 +546,74 @@ function loadCategoriesPage() {
     
     categoriesContainer.innerHTML = '';
     
-    categories.forEach((category, index) => {
+    // Ensure 'categories' array is available globally from products.js
+    if (typeof categories === 'undefined' || categories.length === 0) {
+        console.error('CRITICAL: Global "categories" array is undefined or empty for loadCategoriesPage. Ensure products.js is loaded.');
+        categoriesContainer.innerHTML = '<p>Could not load categories data.</p>';
+        return;
+    }
+
+    const categoryIdMap = {
+        'Electronics': 'electronics',
+        'Clothing': 'clothing',
+        'Home Goods': 'home',
+        'Beauty & Health': 'beauty'
+    };
+
+    categories.forEach(categoryNameString => {
         const categoryCard = document.createElement('div');
         categoryCard.className = 'category-card';
         
-        // Get category image
-        const categoryImage = getCategoryImage(category);
-        
-        // Map category names to IDs
-        const categoryIdMap = {
-            'Electronics': 'electronics',
-            'Clothing': 'clothing',
-            'Home Goods': 'home',
-            'Beauty & Health': 'beauty'
-        };
-        
-        const categoryId = categoryIdMap[category];
-        
+        const categoryImage = getCategoryImage(categoryNameString);
+        const categoryId = categoryIdMap[categoryNameString];
+
+        if (!categoryId) {
+            console.warn(`Warning (loadCategoriesPage): No ID mapping found for category: "${categoryNameString}". Skipping.`);
+            return;
+        }
+
         categoryCard.innerHTML = `
             <div class="category-image">
-                <a href="category.html?id=${categoryId}">
-                    <img src="${categoryImage}" alt="${category}">
+                <a href="category.html?id=${categoryId}"> <!-- Links to category.html -->
+                    <img src="${categoryImage}" alt="${categoryNameString}">
                 </a>
             </div>
             <div class="category-info">
-                <h3><a href="category.html?id=${categoryId}">${category}</a></h3>
+                <h3><a href="category.html?id=${categoryId}">${categoryNameString}</a></h3>
             </div>
         `;
         
+        const imgElement = categoryCard.querySelector('img');
+        imgElement.onerror = function() { 
+            console.warn(`Image failed to load (loadCategoriesPage): ${this.src}. Falling back to default.`);
+            this.onerror=null; 
+            this.src='default_category.svg'; 
+        };
+
         categoriesContainer.appendChild(categoryCard);
     });
+    console.log('Finished loading categories page.');
 }
 
 // Load page-specific functions based on current page
 function loadPageSpecificFunctions() {
     const currentPath = window.location.pathname;
+    const currentUrl = window.location.href;
     
-    if (currentPath.includes('product.html')) {
+    if (currentPath === '/' || currentPath.endsWith('index.html') || currentPath === '') {
+        loadFeaturedProducts();
+        loadCategories();
+    } else if (currentUrl.includes('/product')) {
         loadProductPage();
-    } else if (currentPath.includes('category.html')) {
+    } else if (currentUrl.includes('/category')) {
         loadCategoryPage();
-    } else if (currentPath.includes('cart.html')) {
+    } else if (currentUrl.includes('/cart')) {
         loadCartPage();
-    } else if (currentPath.includes('search.html')) {
+    } else if (currentUrl.includes('/search')) {
         loadSearchPage();
-    } else if (currentPath.includes('products.html')) {
+    } else if (currentUrl.includes('/products')) {
         loadAllProductsPage();
-    } else if (currentPath.includes('categories.html')) {
+    } else if (currentUrl.includes('/categories')) {
         loadCategoriesPage();
     }
 }
@@ -556,12 +623,15 @@ document.addEventListener('DOMContentLoaded', loadPageSpecificFunctions);
 
 // Load categories on homepage
 function loadCategories() {
+    console.log('Attempting to load categories...'); // New log
     const categoryGrid = document.getElementById('category-grid');
-    if (!categoryGrid) return;
+    if (!categoryGrid) {
+        console.error('CRITICAL: Category grid element with ID "category-grid" not found in HTML!');
+        return;
+    }
     
     categoryGrid.innerHTML = '';
     
-    // Map category names to IDs
     const categoryIdMap = {
         'Electronics': 'electronics',
         'Clothing': 'clothing',
@@ -569,27 +639,46 @@ function loadCategories() {
         'Beauty & Health': 'beauty'
     };
     
-    categories.forEach(category => {
+    if (typeof categories === 'undefined' || categories.length === 0) {
+        console.error('CRITICAL: Global "categories" array is undefined or empty. Ensure products.js is loaded and defines it.');
+        categoryGrid.innerHTML = '<p>Could not load categories data.</p>';
+        return;
+    }
+    console.log('Categories data found:', categories); // New log
+    
+    categories.forEach(categoryNameString => {
         const categoryCard = document.createElement('div');
         categoryCard.className = 'category-card';
         
-        // Get category image
-        const categoryImage = getCategoryImage(category);
+        const categoryImage = getCategoryImage(categoryNameString);
+        const categoryId = categoryIdMap[categoryNameString];
         
-        // Get category ID
-        const categoryId = categoryIdMap[category];
-        
+        if (!categoryId) {
+            console.warn(`Warning: No ID mapping found for category: "${categoryNameString}". Skipping this category.`);
+            return;
+        }
+
         categoryCard.innerHTML = `
             <div class="category-image">
-                <a href="category.html?id=${categoryId}">
-                    <img src="${categoryImage}" alt="${category}">
+                <a href="/category?id=${categoryId}">
+                    <img src="${categoryImage}" alt="${categoryNameString}">
                 </a>
             </div>
             <div class="category-info">
-                <h3><a href="category.html?id=${categoryId}">${category}</a></h3>
+                <h3><a href="/category?id=${categoryId}">${categoryNameString}</a></h3>
             </div>
         `;
         
+        const imgElement = categoryCard.querySelector('img');
+        imgElement.onerror = function() { 
+            console.warn(`Image failed to load: ${this.src}. Falling back to default.`);
+            this.onerror=null; 
+            this.src='default_category.svg'; 
+        };
+
         categoryGrid.appendChild(categoryCard);
     });
+    console.log('Finished loading categories.'); // New log
 }
+
+

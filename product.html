@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Details - Global Shopping</title>
+    <title>Product Details - SLO MEDIA LLC</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://www.paypal.com/sdk/js?client-id=AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R&currency=USD"></script>
     <style>
         .product-detail {
             padding: 60px 0;
@@ -100,6 +100,11 @@
             background-color: #c0392b;
         }
         
+        #paypal-button-container {
+            margin-top: 20px;
+            max-width: 300px;
+        }
+        
         .related-products {
             padding: 60px 0;
             background-color: #f9f9f9;
@@ -135,13 +140,13 @@
     <header>
         <div class="container">
             <div class="logo">
-                <h1>Global Shopping</h1>
+                <h1>SLO MEDIA LLC</h1>
             </div>
             <nav>
                 <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="products.html">All Products</a></li>
-                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/products">All Products</a></li>
+                    <li><a href="/categories">Categories</a></li>
                 </ul>
             </nav>
             <div class="search-cart">
@@ -160,18 +165,18 @@
         <div class="container">
             <div class="product-container">
                 <div class="product-gallery">
-                    <img id="product-image" src="" alt="Product Image" onerror="this.onerror=null; this.src='https://via.placeholder.com/640x640.jpg?text=Product+Image';">
+                    <img id="product-image" src="" alt="Product Image">
                 </div>
                 <div class="product-info">
-                    <span class="category" id="product-category">Category</span>
-                    <h1 id="product-title">Product Title</h1>
+                    <span class="category" id="product-category"></span>
+                    <h1 id="product-title"></h1>
                     <div class="product-meta">
                         <p><strong>Availability:</strong> In Stock</p>
-                        <p><strong>SKU:</strong> <span id="product-sku">GP-12345</span></p>
+                        <p><strong>SKU:</strong> <span id="product-sku"></span></p>
                     </div>
-                    <div class="product-price" id="product-price">$29.99</div>
+                    <div class="product-price" id="product-price"></div>
                     <div class="product-description" id="product-description">
-                        Product description will be displayed here.
+                        
                     </div>
                     <div class="product-features">
                         <h3>Key Features</h3>
@@ -182,7 +187,26 @@
                     <div class="product-actions">
                         <button id="add-to-cart-btn">Add to Cart</button>
                         <button id="buy-now-btn">Buy Now</button>
+                        <div id="paypal-button-container"></div>
                     </div>
+                    <script>
+                      paypal.Buttons({
+                        createOrder: function(data, actions) {
+                          return actions.order.create({
+                            purchase_units: [{
+                              amount: {
+                                value: document.querySelector('.product-price').textContent.replace('$', '')
+                              }
+                            }]
+                          });
+                        },
+                        onApprove: function(data, actions) {
+                          return actions.order.capture().then(function(details) {
+                            alert('Transaction completed by ' + details.payer.name.given_name);
+                          });
+                        }
+                      }).render('#paypal-button-container');
+                    </script>
                 </div>
             </div>
         </div>
@@ -220,18 +244,21 @@
                 </div>
                 <div class="footer-section contact">
                     <h3>Contact Us</h3>
-                    <p><i class="fas fa-map-marker-alt"></i> Address: Shanghai Pudong New District, Zhang Jiang Hi-Tech Park</p>
-                    <p><i class="fas fa-phone"></i> Phone: +86 123 4567 8910</p>
-                    <p><i class="fas fa-envelope"></i> Email: contact@globalshopping.com</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Address: 123 Innovation Drive, Silicon Valley, CA 94000, USA</p>
+                    <p><i class="fas fa-phone"></i> Phone: +1 (555) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> Email: contact@slomedia.llc</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2025 Global Shopping. All rights reserved.</p>
+                <p>&copy; 2025 SLO MEDIA LLC. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="products.js"></script>
     <script src="main.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', loadProductPage);
+    </script>
 </body>
 </html>
