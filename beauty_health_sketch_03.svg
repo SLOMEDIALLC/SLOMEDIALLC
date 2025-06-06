@@ -1,0 +1,36 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-handle { fill: #f5deb3; } /* Wheat - light wood or plastic handle */
+    .sk-fill-ferrule { fill: #b0c4de; } /* LightSteelBlue - metal ferrule */
+    .sk-fill-bristles { fill: #d2b48c; } /* Tan - bristles */
+    .sk-bristle-line { stroke: #8b4513; stroke-width: 0.7; stroke-linecap: round;}
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Brush Handle -->
+  <path class="sk-stroke sk-fill-handle" d="M45 85 C40 85 40 70 45 60 L55 60 C60 70 60 85 55 85 Z"/>
+  <!-- Ferrule (metal part) -->
+  <rect x="42" y="45" width="16" height="15" class="sk-stroke sk-fill-ferrule" rx="2"/>
+  
+  <!-- Bristles -->
+  <g class="sk-fill-bristles">
+    <path class="sk-stroke" d="M35 45 C30 30 40 20 50 20 C60 20 70 30 65 45 Z"/>
+  </g>
+  
+  <!-- Individual Bristle Lines for texture -->
+  <g class="sk-bristle-line">
+    <line x1="50" y1="21" x2="50" y2="44"/>
+    <line x1="45" y1="23" x2="45" y2="44"/>
+    <line x1="55" y1="23" x2="55" y2="44"/>
+    <line x1="40" y1="28" x2="42" y2="44"/>
+    <line x1="60" y1="28" x2="58" y2="44"/>
+    <line x1="37" y1="35" x2="40" y2="44"/>
+    <line x1="63" y1="35" x2="60" y2="44"/>
+    
+    <path d="M48 22 Q45 30 46 44"/>
+    <path d="M52 22 Q55 30 54 44"/>
+    <path d="M43 25 Q40 35 42 44"/>
+    <path d="M57 25 Q60 35 58 44"/>
+  </g>
+</svg>

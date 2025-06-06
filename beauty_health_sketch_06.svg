@@ -1,0 +1,33 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-soap { fill: #f0fff0; } /* Honeydew - light green/white for soap */
+    .sk-detail { stroke: #555; stroke-width: 1; }
+    .sk-highlight { stroke: #fff; stroke-width: 1.5; opacity: 0.7; }
+    .sk-bubbles { fill: #e0ffff; opacity: 0.5; stroke: #add8e6; stroke-width: 0.5;}
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Soap Bar (rounded rectangular prism) -->
+  <g transform="skewX(-10) rotate(-5 50 50)">
+    <rect x="25" y="40" width="50" height="25" class="sk-stroke sk-fill-soap" rx="5"/>
+    <!-- Top face showing depth -->
+    <path class="sk-stroke sk-fill-soap" d="M25 40 L30 35 L80 35 L75 40 Z"/>
+    <!-- Side face showing depth -->
+    <path class="sk-stroke sk-fill-soap" d="M75 40 L80 35 L80 60 L75 65 Z"/>
+  </g>
+  
+  <!-- Optional: Indent or logo on soap -->
+  <ellipse cx="50" cy="52" rx="10" ry="4" class="sk-detail" stroke-dasharray="2 1"/>
+  <text x="46" y="54" font-family="Arial, sans-serif" font-size="5" fill="#777" transform="skewX(-10) rotate(-5 50 50)">SOAP</text>
+
+  <!-- Sketchy highlights -->
+  <path d="M35 40 Q40 38 50 38" class="sk-highlight" transform="skewX(-10) rotate(-5 50 50)"/>
+  <path d="M70 45 Q75 50 70 55" class="sk-highlight" transform="skewX(-10) rotate(-5 50 50)"/>
+
+  <!-- Subtle bubbles around (optional) -->
+  <circle cx="20" cy="35" r="3" class="sk-bubbles"/>
+  <circle cx="25" cy="70" r="4" class="sk-bubbles"/>
+  <circle cx="78" cy="30" r="2.5" class="sk-bubbles"/>
+  <circle cx="80" cy="68" r="3.5" class="sk-bubbles"/>
+</svg>

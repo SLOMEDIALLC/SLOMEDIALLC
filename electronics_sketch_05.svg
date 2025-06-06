@@ -1,0 +1,25 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-body { fill: #e0e0e0; }
+    .sk-fill-screen { fill: #c0c0c0; }
+    .sk-fill-stand { fill: #d0d0d0; }
+    .sk-detail { stroke: #555; stroke-width: 1; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Monitor Screen Bezel -->
+  <path class="sk-stroke sk-fill-body" d="M10 70 C8 70 5 68 5 65 L5 25 C5 22 8 20 10 20 L90 20 C92 20 95 22 95 25 L95 65 C95 68 92 70 90 70 Z"/>
+  <!-- Inner Screen -->
+  <path class="sk-stroke sk-fill-screen" d="M12 65 L12 25 L88 25 L88 65 Z"/>
+  
+  <!-- Monitor Stand Neck -->
+  <path class="sk-stroke sk-fill-stand" d="M45 70 L55 70 L55 80 L45 80 Z"/>
+  <!-- Monitor Stand Base -->
+  <path class="sk-stroke sk-fill-stand" d="M35 85 C33 85 30 83 30 80 L70 80 C70 83 67 85 65 85 Z"/>
+
+  <!-- Sketchy highlight on screen -->
+  <path d="M20 30 Q70 40 80 60" fill="none" stroke="#fff" stroke-width="2" opacity="0.4"/>
+  <!-- Button detail -->
+  <circle cx="85" cy="67" r="1.5" fill="#555" class="sk-stroke"/>
+</svg>

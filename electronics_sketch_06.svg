@@ -1,0 +1,39 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-body { fill: #e0e0e0; }
+    .sk-fill-key { fill: #d0d0d0; }
+    .sk-detail { stroke: #555; stroke-width: 0.8; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Keyboard Base -->
+  <path class="sk-stroke sk-fill-body" d="M10 75 C8 75 5 72 5 70 L5 40 C5 38 8 35 10 35 L90 35 C92 35 95 38 95 40 L95 70 C95 72 92 75 90 75 Z"/>
+  
+  <!-- Sketchy Keys (simplified representation) -->
+  <rect x="10" y="40" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="22" y="40" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="34" y="40" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="46" y="40" width="20" height="8" class="sk-stroke sk-fill-key"/> <!-- Spacebar like -->
+  <rect x="68" y="40" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="80" y="40" width="10" height="8" class="sk-stroke sk-fill-key"/>
+
+  <rect x="10" y="50" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="22" y="50" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="34" y="50" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="46" y="50" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="58" y="50" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="70" y="50" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="82" y="50" width="8" height="8" class="sk-stroke sk-fill-key"/>
+
+  <rect x="10" y="60" width="15" height="8" class="sk-stroke sk-fill-key"/> <!-- Shift like -->
+  <rect x="27" y="60" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="39" y="60" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="51" y="60" width="10" height="8" class="sk-stroke sk-fill-key"/>
+  <rect x="63" y="60" width="15" height="8" class="sk-stroke sk-fill-key"/> <!-- Enter like -->
+  <rect x="80" y="60" width="10" height="8" class="sk-stroke sk-fill-key"/>
+
+  <!-- Detail lines for perspective/sketchiness -->
+  <line x1="7" y1="38" x2="93" y2="38" class="sk-detail"/>
+  <line x1="7" y1="72" x2="93" y2="72" class="sk-detail"/>
+</svg>

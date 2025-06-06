@@ -1,0 +1,40 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-body { fill: #d3d3d3; } /* LightGray for body */
+    .sk-fill-handle { fill: #a9a9a9; } /* DarkGray for handle grip */
+    .sk-fill-nozzle { fill: #808080; } /* Gray for nozzle */
+    .sk-detail { stroke: #555; stroke-width: 1; }
+    .sk-highlight { stroke: #fff; stroke-width: 1.5; opacity: 0.6; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Hair Dryer Body -->
+  <g transform="rotate(-30 50 50)">
+    <!-- Main Barrel -->
+    <ellipse cx="50" cy="40" rx="25" ry="15" class="sk-stroke sk-fill-body"/>
+    <!-- Nozzle -->
+    <rect x="70" y="32" width="15" height="16" class="sk-stroke sk-fill-nozzle" rx="3"/>
+    <!-- Back/Vent -->
+    <circle cx="28" cy="40" r="10" class="sk-stroke sk-fill-body"/>
+    <line x1="28" y1="33" x2="28" y2="47" class="sk-detail"/>
+    <line x1="23" y1="36" x2="33" y2="44" class="sk-detail"/>
+    <line x1="23" y1="44" x2="33" y2="36" class="sk-detail"/>
+
+    <!-- Handle -->
+    <path class="sk-stroke sk-fill-body" d="M45 55 C40 60 40 75 45 80 L55 80 C60 75 60 60 55 55 Z"/>
+    <!-- Grip on handle -->
+    <path class="sk-stroke sk-fill-handle" d="M47 60 C45 65 45 75 47 78 L53 78 C55 75 55 65 53 60 Z"/>
+    
+    <!-- Buttons/Switches -->
+    <rect x="48" y="57" width="4" height="6" class="sk-detail" fill="#666" rx="1"/>
+    <rect x="48" y="65" width="4" height="6" class="sk-detail" fill="#666" rx="1"/>
+  </g>
+
+  <!-- Power Cord (sketchy) -->
+  <path d="M55 82 C60 90 40 95 35 85 S40 70 50 75" class="sk-stroke" stroke-width="1.2" fill="none" transform="rotate(-30 50 50)"/>
+  
+  <!-- Highlights -->
+  <path d="M40 30 Q50 25 60 30" class="sk-highlight" transform="rotate(-30 50 50)"/>
+  <path d="M48 60 Q45 65 48 70" class="sk-highlight" transform="rotate(-30 50 50)"/>
+</svg>

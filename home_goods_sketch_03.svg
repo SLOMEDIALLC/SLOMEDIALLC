@@ -1,0 +1,29 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-shade { fill: #fafad2; } /* LightGoldenrodYellow */
+    .sk-fill-base { fill: #d2b48c; } /* Tan */
+    .sk-fill-light { fill: #ffff00; opacity: 0.3;}
+    .sk-detail { stroke: #555; stroke-width: 1; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Lampshade -->
+  <path class="sk-stroke sk-fill-shade" d="M25 50 C25 30 75 30 75 50 L70 55 L30 55 Z"/>
+  <!-- Lamp Base -->
+  <path class="sk-stroke sk-fill-base" d="M40 85 C35 85 35 80 40 80 L60 80 C65 80 65 85 60 85 Z"/>
+  <!-- Lamp Stem -->
+  <line x1="50" y1="55" x2="50" y2="80" class="sk-stroke sk-fill-base" stroke-width="3"/>
+  
+  <!-- Light bulb hint (optional) -->
+  <circle cx="50" cy="52" r="5" class="sk-fill-light"/>
+
+  <!-- Details on shade -->
+  <line x1="27" y1="35" x2="35" y2="53" class="sk-detail"/>
+  <line x1="73" y1="35" x2="65" y2="53" class="sk-detail"/>
+  <line x1="50" y1="30" x2="50" y2="55" class="sk-detail" stroke-dasharray="2 2"/>
+
+  <!-- Pull chain (optional sketchy line) -->
+  <line x1="60" y1="55" x2="65" y2="65" class="sk-stroke"/>
+  <circle cx="66" cy="66" r="1.5" fill="#777"/>
+</svg>

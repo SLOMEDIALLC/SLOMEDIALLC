@@ -1,0 +1,27 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-light { fill: #f0f0f0; }
+    .sk-fill-dark { fill: #e0e0e0; }
+    .sk-screen { fill: #c5c5c5; }
+    .sk-detail { stroke: #555; stroke-width: 1; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/> <!-- Very light background -->
+
+  <!-- Laptop Base -->
+  <path class="sk-stroke sk-fill-light" d="M12 75 C10 75 10 72 12 70 L20 58 L80 58 L88 70 C90 72 90 75 88 75 Z"/>
+  <!-- Touchpad -->
+  <path class="sk-stroke sk-fill-dark" d="M40 72 L60 72 L60 68 L40 68 Z"/>
+  
+  <!-- Laptop Screen -->
+  <path class="sk-stroke sk-fill-light" d="M18 58 L18 15 C18 13 20 12 22 12 L78 12 C80 12 82 13 82 15 L82 58 Z"/>
+  <!-- Inner Screen -->
+  <path class="sk-screen sk-stroke" d="M22 54 L22 18 L78 18 L78 54 Z"/>
+
+  <!-- Sketchy lines for texture/detail on base -->
+  <line x1="25" y1="62" x2="75" y2="62" class="sk-detail" />
+  <line x1="28" y1="66" x2="72" y2="66" class="sk-detail" />
+
+  <!-- Hinge detail -->
+  <rect x="46" y="56" width="8" height="3" fill="#777" class="sk-stroke" />
+</svg>

@@ -1,0 +1,38 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-denim { fill: #add8e6; } /* Light blue denim */
+    .sk-detail { stroke: #555; stroke-width: 1; }
+    .sk-stitch { stroke: #FFD700; stroke-width: 0.8; stroke-dasharray: 2 2;} /* Gold stitch */
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Jeans Body -->
+  <path class="sk-stroke sk-fill-denim" d="M30 20 L70 20 L70 40 Q70 45 65 45 L60 85 C60 88 58 90 55 90 L45 90 C42 90 40 88 40 85 L35 45 Q30 45 30 40 Z"/>
+  
+  <!-- Leg separation line -->
+  <line x1="50" y1="40" x2="50" y2="88" class="sk-stroke"/>
+
+  <!-- Pockets (simplified sketch) -->
+  <path class="sk-stroke" d="M32 25 C35 35 45 35 48 25"/>
+  <path class="sk-stroke" d="M68 25 C65 35 55 35 52 25"/>
+  
+  <!-- Back Pockets sketch -->
+  <rect x="35" y="48" width="10" height="8" class="sk-stroke sk-fill-denim" rx="2"/>
+  <rect x="55" y="48" width="10" height="8" class="sk-stroke sk-fill-denim" rx="2"/>
+
+  <!-- Stitching details -->
+  <path class="sk-stitch" d="M30 20 L70 20"/>
+  <path class="sk-stitch" d="M35 45 L30 40"/>
+  <path class="sk-stitch" d="M65 45 L70 40"/>
+  <path class="sk-stitch" d="M40 85 L35 45"/>
+  <path class="sk-stitch" d="M60 85 L65 45"/>
+  <path class="sk-stitch" d="M40 85 C40 88 42 90 45 90"/>
+  <path class="sk-stitch" d="M60 85 C60 88 58 90 55 90"/>
+
+
+  <!-- Belt loops (simple lines) -->
+  <line x1="35" y1="20" x2="35" y2="23" class="sk-stroke"/>
+  <line x1="50" y1="20" x2="50" y2="23" class="sk-stroke"/>
+  <line x1="65" y1="20" x2="65" y2="23" class="sk-stroke"/>
+</svg>

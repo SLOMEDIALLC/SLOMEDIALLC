@@ -1,0 +1,30 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-cup { fill: #f5f5f5; }
+    .sk-fill-coffee { fill: #6b4f34; } /* Dark coffee color */
+    .sk-detail-line { stroke: #555; stroke-width: 1; fill:none; stroke-linecap:round;}
+    .sk-highlight { fill: #fff; opacity: 0.7; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Cup Body -->
+  <path class="sk-stroke sk-fill-cup" d="M25 75 C20 70 20 40 28 30 L72 30 C80 40 80 70 75 75 Z"/>
+  <!-- Cup Handle -->
+  <path class="sk-stroke sk-fill-cup" d="M72 45 C85 40 90 50 88 60 C85 65 75 65 72 60"/>
+  
+  <!-- Coffee inside -->
+  <ellipse class="sk-stroke sk-fill-coffee" cx="50" cy="33" rx="20" ry="5"/>
+  
+  <!-- Rim highlight -->
+  <path class="sk-highlight" d="M30 31 C40 28 60 28 70 31 C68 34 42 34 30 31 Z" />
+
+  <!-- Sketchy shading lines on cup -->
+  <path class="sk-detail-line" d="M30 65 Q35 60 30 55"/>
+  <path class="sk-detail-line" d="M35 70 Q40 65 35 60"/>
+  <path class="sk-detail-line" d="M65 70 Q60 65 65 60"/>
+  <path class="sk-detail-line" d="M70 65 Q65 60 70 55"/>
+  
+  <!-- Saucer (optional, simple sketchy ellipse) -->
+  <ellipse class="sk-stroke sk-fill-cup" cx="50" cy="78" rx="30" ry="5"/>
+</svg>

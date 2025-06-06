@@ -1,0 +1,26 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-ceramic { fill: #e0ffff; } /* LightCyan - for a ceramic look */
+    .sk-fill-water { fill: #add8e6; opacity: 0.5; } /* LightBlue for water */
+    .sk-detail { stroke: #555; stroke-width: 1; }
+    .sk-highlight { stroke: #fff; stroke-width: 2; opacity: 0.6; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Vase Body -->
+  <path class="sk-stroke sk-fill-ceramic" d="M40 85 C30 85 25 70 30 50 C35 30 40 20 50 20 C60 20 65 30 70 50 C75 70 70 85 60 85 Z"/>
+  <!-- Vase Opening -->
+  <ellipse cx="50" cy="22" rx="12" ry="3" class="sk-stroke sk-fill-ceramic"/>
+  
+  <!-- Optional: Water level hint -->
+  <path class="sk-fill-water" d="M35 60 C40 55 60 55 65 60 L63 70 C60 75 40 75 37 70 Z"/>
+
+  <!-- Decorative lines or pattern -->
+  <path class="sk-detail" d="M35 75 C45 70 55 70 65 75" stroke-dasharray="3 2"/>
+  <path class="sk-detail" d="M32 60 C45 55 55 55 68 60" stroke-dasharray="3 2"/>
+  <path class="sk-detail" d="M38 40 C45 38 55 38 62 40" stroke-dasharray="2 1"/>
+
+  <!-- Sketchy highlight on one side -->
+  <path d="M40 70 Q35 50 42 30" class="sk-highlight" stroke-linecap="butt"/>
+</svg>

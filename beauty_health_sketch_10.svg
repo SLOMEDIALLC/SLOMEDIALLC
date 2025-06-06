@@ -1,0 +1,31 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-comb { fill: #deb887; } /* BurlyWood - for a wooden or plastic comb */
+    .sk-detail { stroke: #555; stroke-width: 1; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Comb Spine -->
+  <path class="sk-stroke sk-fill-comb" d="M15 45 C15 40 20 35 85 35 C80 35 85 40 85 45 Z"/>
+  
+  <!-- Comb Teeth -->
+  <g class="sk-stroke sk-fill-comb">
+    <line x1="20" y1="45" x2="22" y2="65"/>
+    <line x1="25" y1="45" x2="27" y2="66"/>
+    <line x1="30" y1="45" x2="32" y2="67"/>
+    <line x1="35" y1="45" x2="37" y2="68"/>
+    <line x1="40" y1="45" x2="42" y2="69"/>
+    <line x1="45" y1="45" x2="47" y2="70"/>
+    <line x1="50" y1="45" x2="52" y2="70"/>
+    <line x1="55" y1="45" x2="57" y2="69"/>
+    <line x1="60" y1="45" x2="62" y2="68"/>
+    <line x1="65" y1="45" x2="67" y2="67"/>
+    <line x1="70" y1="45" x2="72" y2="66"/>
+    <line x1="75" y1="45" x2="77" y2="65"/>
+    <line x1="80" y1="45" x2="82" y2="64"/>
+  </g>
+
+  <!-- Sketchy details on spine -->
+  <line x1="20" y1="40" x2="80" y2="40" class="sk-detail" stroke-dasharray="3 2" stroke-width="0.8"/>
+</svg>

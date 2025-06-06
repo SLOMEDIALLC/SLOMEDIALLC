@@ -1,0 +1,35 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-fabric { fill: #f5f5dc; } /* Beige */
+    .sk-detail { stroke: #555; stroke-width: 1; }
+    .sk-highlight { stroke: #777; stroke-width: 1; stroke-dasharray: 2 1;}
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Sock 1 -->
+  <g transform="rotate(-10 40 60)">
+    <path class="sk-stroke sk-fill-fabric" d="M25 80 C25 70 30 60 35 50 L45 50 C50 60 55 70 55 80 L50 85 L30 85 Z"/>
+    <!-- Heel -->
+    <path class="sk-stroke sk-fill-fabric" d="M25 80 C20 80 15 75 20 70 L30 70"/>
+    <!-- Toe -->
+    <path class="sk-stroke sk-fill-fabric" d="M35 50 C30 45 35 40 40 40 C45 40 50 45 45 50"/>
+    <!-- Ribbing -->
+    <line x1="37" y1="52" x2="37" y2="60" class="sk-highlight"/>
+    <line x1="40" y1="52" x2="40" y2="60" class="sk-highlight"/>
+    <line x1="43" y1="52" x2="43" y2="60" class="sk-highlight"/>
+  </g>
+
+  <!-- Sock 2 (slightly offset and rotated) -->
+  <g transform="translate(20 0) rotate(10 50 60)">
+    <path class="sk-stroke sk-fill-fabric" d="M35 80 C35 70 40 60 45 50 L55 50 C60 60 65 70 65 80 L60 85 L40 85 Z"/>
+    <!-- Heel -->
+    <path class="sk-stroke sk-fill-fabric" d="M35 80 C30 80 25 75 30 70 L40 70"/>
+    <!-- Toe -->
+    <path class="sk-stroke sk-fill-fabric" d="M45 50 C40 45 45 40 50 40 C55 40 60 45 55 50"/>
+    <!-- Ribbing -->
+    <line x1="47" y1="52" x2="47" y2="60" class="sk-highlight"/>
+    <line x1="50" y1="52" x2="50" y2="60" class="sk-highlight"/>
+    <line x1="53" y1="52" x2="53" y2="60" class="sk-highlight"/>
+  </g>
+</svg>

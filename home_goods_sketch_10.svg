@@ -1,0 +1,32 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-frame { fill: #cd853f; } /* Peru - wooden frame */
+    .sk-fill-glass { fill: #e0f0ff; } /* Light blueish tint for glass */
+    .sk-highlight { stroke: #fff; stroke-width: 1.5; opacity: 0.7; stroke-dasharray: 10 5; }
+    .sk-detail { stroke: #555; stroke-width: 1; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Mirror Frame (oval shape) -->
+  <ellipse cx="50" cy="50" rx="35" ry="45" class="sk-stroke sk-fill-frame"/>
+  
+  <!-- Mirror Glass -->
+  <ellipse cx="50" cy="50" rx="30" ry="40" class="sk-stroke sk-fill-glass"/>
+
+  <!-- Sketchy reflection/highlight -->
+  <path class="sk-highlight" d="M30 30 Q50 40 70 25"/>
+  <path class="sk-highlight" d="M35 75 Q50 60 65 70" stroke-dasharray="8 4"/>
+
+  <!-- Optional: Stand or base if it's a standing mirror, or wall mount hint -->
+  <!-- For a simple wall mirror, this is enough. Adding a small stand element: -->
+  <g transform="translate(0 5)">
+    <path class="sk-stroke sk-fill-frame" d="M40 90 L35 95 L65 95 L60 90 Z"/>
+    <line x1="50" y1="80" x2="50" y2="90" class="sk-stroke sk-fill-frame" stroke-width="2"/>
+  </g>
+  
+  <!-- Wood grain on frame (subtle) -->
+  <path d="M50 10 Q40 25 50 40 T50 70 Q60 85 50 90" class="sk-detail" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <path d="M25 30 Q35 50 25 70" class="sk-detail" stroke-width="0.5" stroke-dasharray="3 2"/>
+  <path d="M75 30 Q65 50 75 70" class="sk-detail" stroke-width="0.5" stroke-dasharray="3 2"/>
+</svg>

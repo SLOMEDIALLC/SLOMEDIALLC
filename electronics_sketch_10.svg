@@ -1,0 +1,25 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-body { fill: #e0e0e0; }
+    .sk-fill-connector { fill: #c0c0c0; }
+    .sk-detail { stroke: #555; stroke-width: 1; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- USB Body -->
+  <path class="sk-stroke sk-fill-body" d="M30 70 C28 70 25 68 25 65 L25 35 C25 32 28 30 30 30 L70 30 C72 30 75 32 75 35 L75 65 C75 68 72 70 70 70 Z"/>
+  
+  <!-- USB Connector -->
+  <path class="sk-stroke sk-fill-connector" d="M40 30 L60 30 L60 15 L40 15 Z"/>
+  <!-- Connector details -->
+  <line x1="45" y1="20" x2="45" y2="28" class="sk-stroke"/>
+  <line x1="55" y1="20" x2="55" y2="28" class="sk-stroke"/>
+  <rect x="42" y="17" width="16" height="3" fill="#a0a0a0" class="sk-stroke"/>
+
+
+  <!-- Sketchy detail on body -->
+  <line x1="35" y1="40" x2="65" y2="40" class="sk-detail"/>
+  <line x1="35" y1="50" x2="65" y2="50" class="sk-detail"/>
+  <line x1="35" y1="60" x2="65" y2="60" class="sk-detail"/>
+</svg>

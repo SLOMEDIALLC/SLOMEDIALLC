@@ -1,0 +1,29 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-bottle { fill: #ffe4e1; opacity: 0.9; } /* MistyRose - for glass bottle */
+    .sk-fill-polish { fill: #dc143c; } /* Crimson - for the polish color */
+    .sk-fill-cap { fill: #696969; } /* DimGray - for the cap/handle */
+    .sk-detail { stroke: #555; stroke-width: 1; }
+    .sk-highlight { stroke: #fff; stroke-width: 1.2; opacity: 0.7; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Nail Polish Bottle -->
+  <path class="sk-stroke sk-fill-bottle" d="M40 75 C35 75 30 70 30 60 L30 40 C30 35 35 30 40 30 L60 30 C65 30 70 35 70 40 L70 60 C70 70 65 75 60 75 Z"/>
+  
+  <!-- Polish liquid inside -->
+  <path class="sk-fill-polish" d="M33 72 C32 72 32 65 32 55 L32 42 L68 42 L68 55 C68 65 68 72 67 72 Z"/>
+
+  <!-- Cap/Handle -->
+  <rect x="42" y="15" width="16" height="20" class="sk-stroke sk-fill-cap" rx="3"/>
+  <!-- Brush stem (thin line, barely visible or implied) -->
+  <line x1="50" y1="30" x2="50" y2="35" class="sk-stroke" stroke="#444" stroke-width="1"/>
+
+  <!-- Sketchy highlights on bottle -->
+  <path d="M35 65 Q32 50 40 35" class="sk-highlight"/>
+  <path d="M65 65 Q68 50 60 35" class="sk-highlight" stroke-dasharray="4 2"/>
+  
+  <!-- Highlight on cap -->
+  <path d="M45 20 L45 30" class="sk-highlight"/>
+</svg>

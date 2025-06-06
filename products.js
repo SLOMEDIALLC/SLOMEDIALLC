@@ -5,6 +5,28 @@ const categories = [
     'Electronics', 'Clothing', 'Home Goods', 'Beauty & Health'
 ];
 
+// Hand-drawn sketch icon filenames
+const electronicsSketchIcons = [
+    'electronics_sketch_01.svg', 'electronics_sketch_02.svg', 'electronics_sketch_03.svg', 'electronics_sketch_04.svg', 'electronics_sketch_05.svg',
+    'electronics_sketch_06.svg', 'electronics_sketch_07.svg', 'electronics_sketch_08.svg', 'electronics_sketch_09.svg', 'electronics_sketch_10.svg'
+];
+
+const clothingSketchIcons = [
+    'clothing_sketch_01.svg', 'clothing_sketch_02.svg', 'clothing_sketch_03.svg', 'clothing_sketch_04.svg', 'clothing_sketch_05.svg',
+    'clothing_sketch_06.svg', 'clothing_sketch_07.svg', 'clothing_sketch_08.svg', 'clothing_sketch_09.svg', 'clothing_sketch_10.svg'
+];
+
+const homeGoodsSketchIcons = [
+    'home_goods_sketch_01.svg', 'home_goods_sketch_02.svg', 'home_goods_sketch_03.svg', 'home_goods_sketch_04.svg', 'home_goods_sketch_05.svg',
+    'home_goods_sketch_06.svg', 'home_goods_sketch_07.svg', 'home_goods_sketch_08.svg', 'home_goods_sketch_09.svg', 'home_goods_sketch_10.svg'
+];
+
+const beautyHealthSketchIcons = [
+    'beauty_health_sketch_01.svg', 'beauty_health_sketch_02.svg', 'beauty_health_sketch_03.svg', 'beauty_health_sketch_04.svg', 'beauty_health_sketch_05.svg',
+    'beauty_health_sketch_06.svg', 'beauty_health_sketch_07.svg', 'beauty_health_sketch_08.svg', 'beauty_health_sketch_09.svg', 'beauty_health_sketch_10.svg'
+];
+
+
 // u56fau5b9au4ea7u54c1u76eeu5f55 - u6bcfu4e2au4ea7u54c1u90fdu6709u56fau5b9au7684u540du79f0u3001u7c7bu522bu3001u56feu7247u548cu63cfu8ff0
 const productCatalog = [
     // Electronics Design Products
@@ -408,3 +430,9 @@ window.getRelatedProducts = getRelatedProducts;
 // window.getBackupImage = getBackupImage;
 // window.getCategoryImage = getCategoryImage;
 // window.resetUsedImages = resetUsedImages;
+
+// Export sketch icon arrays
+window.electronicsSketchIcons = electronicsSketchIcons;
+window.clothingSketchIcons = clothingSketchIcons;
+window.homeGoodsSketchIcons = homeGoodsSketchIcons;
+window.beautyHealthSketchIcons = beautyHealthSketchIcons;

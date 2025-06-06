@@ -1,0 +1,42 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-brush-handle { fill: #add8e6; } /* LightBlue */
+    .sk-fill-bristles { fill: #ffffff; }
+    .sk-fill-paste-tube { fill: #e0e0e0; } /* LightGray */
+    .sk-fill-paste-cap { fill: #4682b4; } /* SteelBlue */
+    .sk-fill-paste { fill: #f0f8ff; } /* AliceBlue for paste */
+    .sk-detail { stroke: #555; stroke-width: 1; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Toothbrush -->
+  <g transform="rotate(-15 50 50) translate(-10 0)">
+    <!-- Handle -->
+    <path class="sk-stroke sk-fill-brush-handle" d="M20 70 C20 65 70 55 75 55 L78 60 L23 75 Z"/>
+    <!-- Head -->
+    <ellipse cx="18" cy="68" rx="5" ry="10" class="sk-stroke sk-fill-brush-handle"/>
+    <!-- Bristles -->
+    <g class="sk-stroke sk-fill-bristles">
+      <line x1="15" y1="60" x2="15" y2="65"/> <line x1="17" y1="60" x2="17" y2="66"/>
+      <line x1="19" y1="60" x2="19" y2="65"/> <line x1="21" y1="60" x2="21" y2="66"/>
+    </g>
+    <!-- Paste on brush -->
+    <path class="sk-stroke sk-fill-paste" d="M14 60 Q17 57 20 60 Q17 63 14 60"/>
+  </g>
+
+  <!-- Toothpaste Tube -->
+  <g transform="rotate(10 70 40) translate(5 -5)">
+    <!-- Tube Body -->
+    <path class="sk-stroke sk-fill-paste-tube" d="M60 50 C55 50 50 45 50 40 L50 20 C50 15 55 10 60 10 L80 10 C85 10 90 15 90 20 L90 40 C90 45 85 50 80 50 Z"/>
+    <!-- Cap -->
+    <rect x="65" y="50" width="10" height="5" class="sk-stroke sk-fill-paste-cap" rx="1"/>
+    <!-- Crimped end -->
+    <path class="sk-stroke sk-fill-paste-tube" d="M50 10 L45 12 L45 8 L50 10"/>
+    <line x1="46" y1="11.5" x2="46" y2="8.5" class="sk-detail"/>
+    <line x1="47.5" y1="11" x2="47.5" y2="9" class="sk-detail"/>
+    <!-- Label area -->
+    <rect x="55" y="20" width="30" height="15" class="sk-detail" fill="rgba(255,255,255,0.3)" rx="2"/>
+    <text x="58" y="30" font-family="Arial" font-size="6" fill="#555">PASTE</text>
+  </g>
+</svg>

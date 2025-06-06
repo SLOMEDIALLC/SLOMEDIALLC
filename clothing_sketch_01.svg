@@ -1,0 +1,27 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-main { fill: #f0e8e0; } /* Light fabric color */
+    .sk-fill-accent { fill: #d8c0a8; } /* Belt/accent color */
+    .sk-detail-line { stroke: #555; stroke-width: 1; fill:none; stroke-linecap:round;}
+    .sk-shadow { fill: #000000; opacity: 0.05; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Dress Bodice -->
+  <path class="sk-stroke sk-fill-main" d="M35 20 Q33 22 35 25 L40 45 Q50 48 60 45 L65 25 Q67 22 65 20 Z"/>
+  
+  <!-- Dress Skirt (flared) -->
+  <path class="sk-stroke sk-fill-main" d="M30 46 C20 55 15 70 25 80 L75 80 C85 70 80 55 70 46 L60 45 Q50 48 40 45 L30 46 Z"/>
+  
+  <!-- Belt -->
+  <path class="sk-stroke sk-fill-accent" d="M38 43 Q50 46 62 43 L61 48 Q50 51 39 48 L38 43 Z"/>
+
+  <!-- Sketchy details on skirt -->
+  <path class="sk-detail-line" d="M30 55 Q40 52 50 55 Q60 52 70 55"/>
+  <path class="sk-detail-line" d="M28 65 Q40 62 50 65 Q60 62 72 65"/>
+  <path class="sk-detail-line" d="M26 75 Q40 72 50 75 Q60 72 74 75"/>
+
+  <!-- Neckline detail -->
+  <path class="sk-detail-line" d="M40 23 Q50 26 60 23"/>
+</svg>

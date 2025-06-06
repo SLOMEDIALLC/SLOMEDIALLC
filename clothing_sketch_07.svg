@@ -1,0 +1,34 @@
+<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .sk-stroke { stroke: #333; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+    .sk-fill-fabric { fill: #8b4513; } /* SaddleBrown */
+    .sk-fill-lining { fill: #burlywood; }
+    .sk-detail { stroke: #555; stroke-width: 1; }
+  </style>
+  <rect width="100" height="100" fill="#F8F9FA"/>
+
+  <!-- Jacket Body -->
+  <path class="sk-stroke sk-fill-fabric" d="M20 80 L20 35 C20 30 25 25 30 25 L70 25 C75 25 80 30 80 35 L80 80 Z"/>
+  <!-- Lapels / Collar -->
+  <path class="sk-stroke sk-fill-lining" d="M30 25 L40 40 L25 45 Z"/>
+  <path class="sk-stroke sk-fill-lining" d="M70 25 L60 40 L75 45 Z"/>
+  <path class="sk-stroke sk-fill-fabric" d="M40 25 C45 30 55 30 60 25"/>
+  
+  <!-- Sleeves -->
+  <path class="sk-stroke sk-fill-fabric" d="M20 38 L10 45 L15 70 L25 65 Z"/>
+  <path class="sk-stroke sk-fill-fabric" d="M80 38 L90 45 L85 70 L75 65 Z"/>
+  
+  <!-- Pockets -->
+  <rect x="25" y="60" width="15" height="8" class="sk-stroke sk-fill-fabric" rx="2"/>
+  <rect x="60" y="60" width="15" height="8" class="sk-stroke sk-fill-fabric" rx="2"/>
+  
+  <!-- Buttons -->
+  <circle cx="50" cy="45" r="2.5" class="sk-stroke" fill="#654321"/>
+  <circle cx="50" cy="55" r="2.5" class="sk-stroke" fill="#654321"/>
+  <circle cx="50" cy="65" r="2.5" class="sk-stroke" fill="#654321"/>
+
+  <!-- Crease lines -->
+  <path d="M50 40 L50 75" class="sk-detail" stroke-dasharray="3 2"/>
+  <path d="M30 50 Q35 55 30 60" class="sk-detail"/>
+  <path d="M70 50 Q65 55 70 60" class="sk-detail"/>
+</svg>

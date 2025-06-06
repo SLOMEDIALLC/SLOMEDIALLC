@@ -41,6 +41,35 @@ function getCategoryImage(categoryName) {
     return categoryImageMap[categoryName] || 'default_category.svg'; // Provide a default or handle error
 }
 
+// Get a random sketch icon for a product category
+function getRandomSketchIcon(categoryName) {
+    let iconArray;
+    switch (categoryName) {
+        case 'Electronics':
+            iconArray = window.electronicsSketchIcons || [];
+            break;
+        case 'Clothing':
+            iconArray = window.clothingSketchIcons || [];
+            break;
+        case 'Home Goods':
+            iconArray = window.homeGoodsSketchIcons || [];
+            break;
+        case 'Beauty & Health':
+            iconArray = window.beautyHealthSketchIcons || [];
+            break;
+        default:
+            iconArray = [];
+    }
+
+    if (iconArray.length === 0) {
+        console.warn(`No sketch icons found for category: ${categoryName}. Using default.`);
+        return 'default_product_icon.svg'; // Provide a default sketch icon or handle error
+    }
+
+    const randomIndex = Math.floor(Math.random() * iconArray.length);
+    return iconArray[randomIndex];
+}
+
 
 // DOM content loaded event
 document.addEventListener('DOMContentLoaded', function() {
@@ -80,7 +109,7 @@ function createProductCard(product) {
     productCard.innerHTML = `
         <div class="product-image">
             <a href="/product?id=${product.id}">
-                <img src="${product.image}" alt="${product.name}">
+                <img src="${getRandomSketchIcon(product.category)}" alt="${product.name}">
             </a>
         </div>
         <div class="product-info">
@@ -291,7 +320,7 @@ function loadProductPage() {
     // Update product details
     let productImage = document.getElementById('product-image');
     if (productImage) {
-        productImage.src = product.image;
+        productImage.src = getRandomSketchIcon(product.category);
         productImage.alt = product.name;
         // productImage.onerror = function() { /* Error handling removed */ };
     }
